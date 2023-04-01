@@ -228,7 +228,7 @@ However, round-robin partitioning also has some drawbacks. One of the main disad
 
 **Composite partitioning** is a horizontal partitioning technique that combines two or more partitioning methods to achieve more granular control over data distribution and organization. It allows you to partition a large database table based on multiple criteria or dimensions, improving query performance and scalability for complex data sets and access patterns.
 
-The most common types of composite partitioning are:
+### The most common types of composite partitioning are:
 
 - **Range-hash partitioning**: In this approach, the data is first partitioned by range on one column (called the range partition key), and then each range partition is further divided into hash partitions based on another column (called the hash partition key). This method can help distribute data evenly within each range partition, improving load balancing and query performance for both range and hash-based queries.
 
@@ -238,7 +238,7 @@ The most common types of composite partitioning are:
 
 - **List-range partitioning**: In this approach, the data is first partitioned by a list of discrete values on one column, and then each list partition is further divided into range partitions based on another column. This method can help organize data into more specific categories or groups within each list partition, improving query performance for both list and range-based queries.
 
-To implement composite partitioning, follow these general steps:
+### To implement composite partitioning, follow these general steps:
 
 - **Choose the partitioning methods**: Select the combination of partitioning methods that best suits your data and access patterns. This decision will be based on factors such as data distribution, query patterns, and performance requirements.
 
