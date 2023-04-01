@@ -38,13 +38,13 @@ Partitioning allows for better data isolation and management of concurrent scena
 
 ### Advantages of vertical partitioning:
 
-- **Improved performance**: By reducing the number of columns accessed in a query, you can decrease the amount of data that needs to be read, which leads to faster query execution.
+1. **Improved performance**: By reducing the number of columns accessed in a query, you can decrease the amount of data that needs to be read, which leads to faster query execution.
 
-- **Better resource utilization**: Vertical partitioning allows for better usage of system resources, such as memory and CPU, since only the necessary data is loaded into memory for processing.
+2. **Better resource utilization**: Vertical partitioning allows for better usage of system resources, such as memory and CPU, since only the necessary data is loaded into memory for processing.
 
-- **Scalability**: Vertical partitioning can help distribute the data across multiple servers, improving the overall performance and scalability of the system.
+3. **Scalability**: Vertical partitioning can help distribute the data across multiple servers, improving the overall performance and scalability of the system.
 
-- **Easier maintenance**: Partitioning can simplify the process of managing large tables by breaking them down into smaller, more manageable pieces.
+4. **Easier maintenance**: Partitioning can simplify the process of managing large tables by breaking them down into smaller, more manageable pieces.
 
 However, vertical partitioning also has some drawbacks, such as increased complexity in managing the database schema and queries, and the need for careful planning to ensure data consistency and referential integrity. It's essential to analyze the database workload and requirements thoroughly before deciding on a partitioning strategy.
 
@@ -84,11 +84,11 @@ There are several partitioning strategies based on which a big table is split in
 
 ### Advantages of range-based sharding:
 
-- **Improved query performance**: Range-based sharding can significantly speed up range queries, as the search can be limited to the relevant shard(s) instead of scanning the entire dataset.
+1. **Improved query performance**: Range-based sharding can significantly speed up range queries, as the search can be limited to the relevant shard(s) instead of scanning the entire dataset.
 
-- **Load distribution**: Range-based sharding can help distribute data and query load across multiple servers or storage systems, improving performance and scalability.
+2. **Load distribution**: Range-based sharding can help distribute data and query load across multiple servers or storage systems, improving performance and scalability.
 
-- **Data organization**: By logically grouping data based on a specific range, range-based sharding can make it easier to manage and understand the data.
+3. **Data organization**: By logically grouping data based on a specific range, range-based sharding can make it easier to manage and understand the data.
 
 However, range-based sharding also has some drawbacks, such as potential data skew (uneven distribution of data across shards) if the chosen shard key and ranges do not evenly distribute the data. Hotspots may also occur if a specific range receives a higher volume of queries or writes. It's essential to carefully plan and monitor the distribution of data and load across shards to avoid these issues and maintain optimal performance.
 
@@ -132,7 +132,7 @@ Hash-based partitioning is a horizontal partitioning technique in which a large 
 
 However, hash-based partitioning also has some drawbacks, such as the inability to efficiently perform range queries, as the data is not stored in a sorted order. Additionally, changing the number of shards may require a significant amount of data movement and rehashing, which can be resource-intensive and impact system performance.
 
-#### Is mapping required?
+### Is mapping required?
 
 In hash-based partitioning, a direct mapping between the shard key values and the shards is not maintained, unlike range-based partitioning. Instead, the mapping is implicit, as it is based on the output of the hash function applied to the shard key values.
 
